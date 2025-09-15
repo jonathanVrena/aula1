@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Trens Elétricos e Pantógrafos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    section {
+      padding: 30px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #2c3e50;
+    }
+
+    .pantografo-container {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    svg {
+      width: 300px;
+      height: 300px;
+      background: #fff;
+      border: 1px solid #ccc;
+    }
+
+    .articulado {
+      transition: transform 1s ease-in-out;
+      transform-origin: bottom center;
+    }
+
+    .subindo {
+      transform: translateY(-60px);
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #3498db;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .tipos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .tipo {
+      background: #fff;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Trens Elétricos e Pantógrafos</h1>
+    <p>Explorando a tecnologia que alimenta os trilhos</p>
+  </header>
+
+  <section>
+    <h2>📜 História dos Pantógrafos</h2>
+    <p>Os pantógrafos são dispositivos montados no teto de trens elétricos que coletam energia da catenária (linha aérea). O modelo romboidal clássico, em forma de diamante, foi amplamente usado no século XX. Com o avanço da tecnologia, surgiu o pantógrafo semi-romboidal em formato de "Z", mais leve, eficiente e adequado para altas velocidades. Hoje, pantógrafos modernos são acionados automaticamente por sistemas eletrônicos, pneumáticos ou mecânicos.</p>
+  </section>
+
+  <section>
+    <h2>🔍 Tipos de Pantógrafos</h2>
+    <div class="tipos">
+      <div class="tipo">
+        <h3>Romboidal</h3>
+        <p>Formato de diamante, usado em trens antigos. Acionamento mecânico.</p>
+      </div>
+      <div class="tipo">
+        <h3>Semi-Romboidal (Z)</h3>
+        <p>Design moderno em "Z", ideal para alta velocidade. Acionamento automático.</p>
+      </div>
+      <div class="tipo">
+        <h3>Trolley Pole</h3>
+        <p>Usado em bondes, com haste simples e roda na ponta. Operação manual.</p>
+      </div>
+      <div class="tipo">
+        <h3>Pantógrafo Telescópico</h3>
+        <p>Design compacto com braços retráteis, usado em sistemas urbanos.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pantografo-container">
+    <h2>🎬 Pantógrafo Funcional</h2>
+    <svg viewBox="0 0 400 400">
+      <!-- Base fixa -->
+      <line x1="120" y1="300" x2="280" y2="300" stroke="red" stroke-width="4" />
+
+      <!-- Grupo articulado -->
+      <g id="pantografo" class="articulado">
+        <!-- Haste 1 -->
+        <line x1="120" y1="300" x2="180" y2="240" stroke="red" stroke-width="4" />
+        <!-- Haste 2 -->
+        <line x1="180" y1="240" x2="140" y2="180" stroke="red" stroke-width="4" />
+        <!-- Haste 3 -->
+        <line x1="140" y1="180" x2="200" y2="120" stroke="red" stroke-width="4" />
+        <!-- Coletor -->
+        <line x1="190" y1="120" x2="210" y2="120" stroke="gray" stroke-width="4" />
+        <!-- Molas -->
+        <polyline points="125,295 130,290 135,295 140,290 145,295" stroke="#888" stroke-width="2" fill="none" />
+        <polyline points="185,235 190,230 195,235 200,230 205,235" stroke="#888" stroke-width="2" fill="none" />
+      </g>
+    </svg>
+    <button onclick="animarPantografo()">Levantar Pantógrafo</button>
+  </section>
+
+  <footer>
+    <p>© 2025 Museu Virtual dos Trens Elétricos</p>
+  </footer>
+
+  <script>
+    function animarPantografo() {
+      const pantografo = document.getElementById("pantografo");
+      pantografo.classList.toggle("subindo");
+    }
+  </script>
+
+</body>
+</html>

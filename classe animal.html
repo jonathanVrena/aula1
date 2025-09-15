@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Classe Animal</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .animal { margin-bottom: 10px; padding: 10px; border: 1px solid #ccc; }
+  </style>
+</head>
+<body>
+  <h1>Lista de Animais</h1>
+  <div id="animais-container"></div>
+
+  <script>
+    // Classe Animal
+    class Animal {
+      constructor(nome, especie, idade) {
+        this.nome = nome;
+        this.especie = especie;
+        this.idade = idade;
+      }
+
+      getInfo() {
+        return `Nome: ${this.nome}, Espécie: ${this.especie}, Idade: ${this.idade} anos`;
+      }
+    }
+
+    // Criando 10 objetos
+    const animais = [
+      new Animal("Luna", "Cachorro", 3),
+      new Animal("Mimi", "Gato", 2),
+      new Animal("Tico", "Papagaio", 5),
+      new Animal("Rex", "Cachorro", 4),
+      new Animal("Nina", "Gato", 1),
+      new Animal("Bento", "Coelho", 2),
+      new Animal("Zazu", "Arara", 6),
+      new Animal("Thor", "Cavalo", 7),
+      new Animal("Lili", "Hamster", 1),
+      new Animal("Spike", "Porquinho-da-índia", 3)
+    ];
+
+    // Exibir na página
+    const container = document.getElementById("animais-container");
+    animais.forEach(animal => {
+      const div = document.createElement("div");
+      div.className = "animal";
+      div.textContent = animal.getInfo();
+      container.appendChild(div);
+    });
+  </script>
+</body>
+</html>
